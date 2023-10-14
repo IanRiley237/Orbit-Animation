@@ -10,12 +10,20 @@
         <link rel="icon" href="favicon.ico">
     </head>
     <body>
-        <p><button onclick="simulate()">Run simulation</button></p>
+        <p>
+            <button id="create-defaults-button">Create Default objects</button>
+            <button id="play-simulation-button">Play</button>
+            <button id="pause-simulation-button">Pause</button>
+            <button id="reset-simulation-button">Reset</button>
+        </p>
         <div id="field"></div>
         <div id="create-object">
+            <input type="text" id="create-object-x" hidden>
+            <input type="text" id="create-object-y" hidden>
+            <label>Velocity:</label><br>
             <p>
-                <input type="text" id="text-input" placeholder="x" id="create-object-dx">
-                <input type="text" id="text-input" placeholder="y" id="create-object-dy"><br>
+                <input type="text" placeholder="x" id="create-object-dx">
+                <input type="text" placeholder="y" id="create-object-dy"><br>
             </p>
             <p>
                 <label for="color-input">Color:</label><br>

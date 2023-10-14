@@ -7,21 +7,24 @@ var currObj = 0;
 var totalMassOverRadiusSquared = 0;
 var totalVector = new Vector(0, 0);
 
-function simulate() {
-    for (var i = 0; i < celestialObjectCount; i++) {
-        celestialObjects[i].element.remove();
-    }
-    celestialObjectCount = 0;
-    celestialObjects = createDefaultCelestialObjects();
+var isPaused = 1;
+function play() {
+    isPaused = 0;
     var id = null;
     clearInterval(id);
     id = setInterval(frame, 1);
     function frame() {
+        if (isPaused == 1) {
+            return;
+        }
         for (var i = 0; i < 500; i++) {
             celestialObjects.forEach(applyForcesToOthers);
         }
     }
+}
 
+function pause () {
+    isPaused = 1;
 }
 
 function applyForcesToOthers(ob, index) {
@@ -45,8 +48,4 @@ function findValues(ob, index) {
         totalVector.add(
             ob.pos.sub(celestialObjects[currObj].pos).normalize()
         );
-}
-
-function pause() {
-
 }
