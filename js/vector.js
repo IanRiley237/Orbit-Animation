@@ -1,3 +1,4 @@
+/// <reference path="../lib/jquery-3.7.1.js" />
 class Vector extends Array {
     add(otherVector) {
         return this.map((e, i) => e + otherVector[i]);
@@ -12,8 +13,7 @@ class Vector extends Array {
         return (this[0] ** 2 + this[1] ** 2) ** 0.5
     }
     normalize() {
-        let mag = this.magnitude();
-        return this.map((e) => e / mag);
+        return this.map((e) => e / this.magnitude());
     }
     getDistance(otherVector) {
         return Math.abs(this.sub(otherVector).magnitude());

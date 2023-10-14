@@ -1,22 +1,23 @@
-const GFactorOffset = 6;
+/// <reference path="celestial_object.js" />
+var GFactorOffset = 6;
 const G = 6.67430 * 10**(-11 + GFactorOffset);
 
-let celestialObjects = [];
-let currObj = 0;
-let totalMassOverRadiusSquared = 0;
-let totalVector = new Vector(0, 0);
+var celestialObjects = [];
+var currObj = 0;
+var totalMassOverRadiusSquared = 0;
+var totalVector = new Vector(0, 0);
 
 function simulate() {
-    for (let i = 0; i < celestialObjectCount; i++) {
+    for (var i = 0; i < celestialObjectCount; i++) {
         celestialObjects[i].element.remove();
     }
     celestialObjectCount = 0;
-    celestialObjects = createCelestialObjects();
-    let id = null;
+    celestialObjects = createDefaultCelestialObjects();
+    var id = null;
     clearInterval(id);
     id = setInterval(frame, 1);
     function frame() {
-        for (let i = 0; i < 500; i++) {
+        for (var i = 0; i < 500; i++) {
             celestialObjects.forEach(applyForcesToOthers);
         }
     }
@@ -44,4 +45,8 @@ function findValues(ob, index) {
         totalVector.add(
             ob.pos.sub(celestialObjects[currObj].pos).normalize()
         );
+}
+
+function pause() {
+
 }

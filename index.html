@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css.css"/>
-        <script src="vector.js"></script>
-        <script src="celestial_object.js"></script>
-        <script src="main.js"></script>
-        <script src="https://raw.githack.com/MikeMcl/big.js/master/big.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+        <script src="js/vector.js"></script>
+        <script src="js/celestial_object.js"></script>
+        <script src="js/simulator.js"></script>
         <link rel="icon" href="favicon.ico">
     </head>
     <body>
-        <p><button onclick="simulate()">Run simulation</button></p> 
+        <p><button onclick="simulate()">Run simulation</button></p>
+        <div id="field"></div>
+        <div id="create-object">
+            <p>
+                <input type="text" id="text-input" placeholder="x" id="create-object-dx">
+                <input type="text" id="text-input" placeholder="y" id="create-object-dy"><br>
+            </p>
+            <p>
+                <label for="color-input">Color:</label><br>
+                <input type="color" id="color-input">
+            </p>
+            <button id="create-object-button">Create</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="lib/jquery-3.7.1.js"></script>
+        <script src="js/celestial_object.js"></script>
+        <script src="js/simulator.js"></script>
+        <script src="js/interface.js"></script>
     </body>
 </html>
