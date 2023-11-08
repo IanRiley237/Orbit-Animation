@@ -26,11 +26,11 @@ $(function() {
     $("#create-object-button").on("click", function () {
         $('#create-object').toggle();
         var pos = new Vector();
-        pos[0] = parseFloat($("#create-object-x:text").val());
-        pos[1] = parseFloat($("#create-object-y:text").val());
+        pos[0] = parseFloat($("#create-object-x:text").val() || 0);
+        pos[1] = parseFloat($("#create-object-y:text").val() || 0);
         var vel = new Vector();
-        vel[0] = parseFloat($("#create-object-dx:text").val());
-        vel[1] = parseFloat($("#create-object-dy:text").val());
+        vel[0] = parseFloat($("#create-object-dx:text").val() || 0);
+        vel[1] = parseFloat($("#create-object-dy:text").val() || 0);
         var color = $("#color-input").val();
         celestialObjects.push(createObject(pos, vel, 2, color));
     });
